@@ -17,6 +17,10 @@ body {
     margin: 50px auto;
 }
 
+header {
+    position: relative;
+}
+
 header .logo {
     font-weight: 600;
     font-size: 20px;
@@ -75,6 +79,62 @@ header .presentation::before {
     font-weight: 300;
     color: #fff
 }
+
+header .icon-shop {
+
+    float: right;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+
+}
+
+header .icon-shop :hover {
+    color: #f70606;
+}
+
+header .icon-shop.active {
+    overflow: hidden;
+    color: #f7069a;
+    transform: scale(1.5);
+}
+
+header .shop-card {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    background: #f7f4f4;
+    box-shadow: 49px 52px 9px -32px rgba(0, 0, 0, 0.14);
+    z-index: 1;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+header .shop-card .item {
+    width: 100%;
+    float: left;
+    padding-bottom: 20px;
+}
+
+header .shop-card .item img{
+    width: 70px;
+    float: left;
+    margin-right: 20px;
+}
+
+header .shop-card .item h2{
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+header .shop-card .item p{
+color: #797979;
+    }
+
+header .shop-card .empty h2{
+        font-size: 20px;
+        margin-bottom: 20px;
+        }
 
 main {
     display: flex;

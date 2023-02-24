@@ -7,6 +7,7 @@ import Items from "./components/Items";
   constructor(props){
     super(props)
     this.state = {
+      orders: [],
       items: [
         {
           id: 1,
@@ -34,15 +35,26 @@ import Items from "./components/Items";
         },
       ]
     }
+    this.addToOrder = this.addToOrder.bind(this)
   }
   render(){
     return (
       <div className="wrapper">
-          <Header />
-          <Items items={this.state.items}/>
+          <Header orders={this.state.orders}/>
+          <Items items={this.state.items} onAdd={this.addToOrder}/>
           <Footer />
       </div>
   )
+  }
+
+  addToOrder(item) {
+    let isInArr = false;
+    this.state.orders.forEach(el => {
+      if(el.id === item.id)
+      isInArr = true
+    })
+    if(!isInArr)
+this.setState({orders: [...this.state.orders, item]})
   }
 }
 
