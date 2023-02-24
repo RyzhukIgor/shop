@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 50px auto;
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+header ul.nav {
+    float: right;
+    list-style: none;
+}
+
+header ul.nav li {
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+}
+
+header ul.nav li:hover {
+    opacity: 0.5;
+}
+
+
+
+header .presentation {
+    margin: 50px 0;
+    background: url('./img/12.jpg') no-repeat;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+    background-color: rgb(156, 153, 149);
+    position: relative;
+}
+
+
+
+header .presentation::after {
+    content: 'Лучшие товары для Вашего дома';
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 300px;
+    font-size: 40px;
+    font-weight: 600px;
+    color: #fff
+}
+
+header .presentation::before {
+    content: 'по низким ценам';
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    width: 300px;
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: #f5f5f5;
+    overflow: hidden;
+    transform: transition;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+main .item img {
+    max-width: 100%;
+    border-radius: 2px;
+    transition: transform 500ms ease;
+}
+
+main .item img:hover {
+    transform: scale(1.05);
+}
+
+main h2,
+main p,
+main b {
+    margin: 10px 20px;
+    color: #333
+}
+
+main b {
+    color: rgb(255, 127, 206);
+}
+
+main .add-card {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: #d4304b;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 600;
+    transition: transform 500ms ease;
+}
+
+main .add-card:hover {
+    transform: scale(1.5) translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+}
