@@ -136,6 +136,29 @@ header .shop-card .empty h2{
         margin-bottom: 20px;
         }
 
+header .shop-card .item .delete-icon {
+    color:#f70606;
+    float: right;
+    position: relative;
+    top: -25px;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop-card .item .delete-icon:hover {
+    transform: scale(1.5);
+    color:#f7069a;
+}
+
+header .shop-card .sum {
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
 main {
     display: flex;
     width: 100%;
