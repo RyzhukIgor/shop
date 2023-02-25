@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Items from "./components/Items";
 import Categories from "./components/Categories";
+import ShowFullCard from "./components/ShowFullCard";
 
 class App extends React.Component {
     constructor(props) {
@@ -36,34 +37,63 @@ class App extends React.Component {
                     price: "49.99",
                 },
             ],
-        }
+            showFullItem: false,
+            fulItem: {},
+        };
 
-        this.state.currentItems=this.state.items
+        this.state.currentItems = this.state.items;
         this.addToOrder = this.addToOrder.bind(this);
         this.deleteOrder = this.deleteOrder.bind(this);
         this.chooseCategory = this.chooseCategory.bind(this);
+        this.onShowItem = this.onShowItem.bind(this);
     }
     render() {
         return (
             <div className="wrapper">
-                <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
+                <Header
+                    orders={this.state.orders}
+                    onDelete={this.deleteOrder}
+                />
                 <Categories chooseCategory={this.chooseCategory} />
-                <Items items={this.state.currentItems} onAdd={this.addToOrder} />
+                <Items
+                    onShowItem={this.onShowItem}
+                    items={this.state.currentItems}
+                    onAdd={this.addToOrder}
+                />
+                {this.state.showFullItem && (
+                    <ShowFullCard
+                        item={this.state.fullItem}
+                        onAdd={this.addToOrder}
+                        onShowItem={this.onShowItem}
+                    />
+                )}
                 <Footer />
             </div>
         );
     }
 
-chooseCategory(category){
-    this.setState({
-        currentItems: this.state.items.filter(el =>
-            el.category === category)
-    })
-}
+    onShowItem(item) {
+        this.setState({ fullItem: item });
+        this.setState({ showFullItem: !this.state.showFullItem });
+    }
 
-deleteOrder(id) {
-this.setState({orders: this.state.orders.filter(el => el.id !== id)})
-}
+    chooseCategory(category) {
+        if (category === "all") {
+            this.setState({ currentItems: this.state.items });
+            return;
+        }
+        this.setState({
+            currentItems: this.state.items.filter(
+                (el) => el.category === category
+            ),
+        });
+    }
+
+    deleteOrder(id) {
+        this.setState({
+            orders: this.state.orders.filter((el) => el.id !== id),
+        });
+    }
 
     addToOrder(item) {
         let isInArr = false;

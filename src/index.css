@@ -116,28 +116,28 @@ header .shop-card .item {
     padding-bottom: 20px;
 }
 
-header .shop-card .item img{
+header .shop-card .item img {
     width: 70px;
     float: left;
     margin-right: 20px;
 }
 
-header .shop-card .item h2{
-font-size: 20px;
-margin-bottom: 10px;
+header .shop-card .item h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-header .shop-card .item p{
-color: #797979;
-    }
+header .shop-card .item p {
+    color: #797979;
+}
 
-header .shop-card .empty h2{
-        font-size: 20px;
-        margin-bottom: 20px;
-        }
+header .shop-card .empty h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 
 header .shop-card .item .delete-icon {
-    color:#f70606;
+    color: #f70606;
     float: right;
     position: relative;
     top: -25px;
@@ -147,7 +147,7 @@ header .shop-card .item .delete-icon {
 
 header .shop-card .item .delete-icon:hover {
     transform: scale(1.5);
-    color:#f7069a;
+    color: #f7069a;
 }
 
 header .shop-card .sum {
@@ -169,6 +169,7 @@ header .shop-card .sum {
     border: 1px solid transparent;
     transition: all 500ms ease;
 }
+
 .categories div:hover {
     border-color: silver;
     transform: scale(1.1);
@@ -191,30 +192,38 @@ main .item {
     transform: transition;
     position: relative;
     padding-bottom: 20px;
+    cursor: pointer;
 }
 
-main .item img {
+main .item img,
+.full-item img {
     max-width: 100%;
     border-radius: 2px;
     transition: transform 500ms ease;
 }
 
-main .item img:hover {
+main .item img:hover,
+.full-item img:hover {
     transform: scale(1.05);
 }
 
 main h2,
+.full-item h2,
 main p,
-main b {
+.full-item p,
+main b,
+.full-item b {
     margin: 10px 20px;
     color: #333
 }
 
-main b {
+main b,
+.full-item b {
     color: rgb(255, 127, 206);
 }
 
-main .add-card {
+main .add-card,
+.full-item .add-card {
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -229,9 +238,34 @@ main .add-card {
     transition: transform 500ms ease;
 }
 
-main .add-card:hover {
+main .add-card:hover,
+.full-item .add-card:hover {
     transform: scale(1.5) translateY(-5px);
 }
+
+.full-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    overflow: auto;
+}
+
+.full-item>div {
+    position: relative;
+    width: 600px;
+    margin: 10% auto;
+    padding: 40px 30px;
+    border-radius: 9px;
+    background: #fff;
+
+}
+
+
+
 
 footer {
     text-align: center;
